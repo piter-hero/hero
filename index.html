@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>hero.OS</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="apple-mobile-web-app-title" content="hero.OS">
+<meta name="application-name" content="hero.OS">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#152C3E">
+<style>
+  html,body{margin:0;height:100%;background:#152C3E;overflow:hidden}
+  #app{position:fixed;left:0;right:0;top:env(safe-area-inset-top);bottom:0;width:100%;height:calc(100% - env(safe-area-inset-top));border:0;background:#fff;opacity:0;transition:opacity .25s}
+  #app.ready{opacity:1}
+  #splash{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;transition:opacity .25s}
+  #splash b{font-size:26px;letter-spacing:.5px}
+  #splash span{font-size:12px;opacity:.6}
+  #splash.hide{opacity:0;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="splash"><b>hero.OS</b><span>불러오는 중…</span></div>
+<iframe id="app" title="hero.OS"
+  src="https://script.google.com/macros/s/AKfycbz3HWFwP3A-LmkQVxHG73lIxDUipd7QkabliWIy9WYVIh3d_KAePwK2X4ONWVtmiwA6/exec"></iframe>
+<script>
+  var f = document.getElementById('app'), s = document.getElementById('splash');
+  f.addEventListener('load', function(){ setTimeout(function(){ f.classList.add('ready'); s.classList.add('hide'); }, 600); });
+  setTimeout(function(){ f.classList.add('ready'); s.classList.add('hide'); }, 15000);
+</script>
+</body>
+</html>
